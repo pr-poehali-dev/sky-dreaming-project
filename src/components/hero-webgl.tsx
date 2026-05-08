@@ -115,7 +115,7 @@ const Scene = () => {
 
 export const Hero3DWebGL = () => {
   const titleWords = "Synapse AI".split(" ")
-  const subtitle = "Нейроинтерфейсы нового поколения."
+  const subtitle = "Мозг + машина. Интерфейс, который меняет всё."
   const [visibleWords, setVisibleWords] = useState(0)
   const [subtitleVisible, setSubtitleVisible] = useState(false)
   const [delays, setDelays] = useState<number[]>([])
@@ -145,8 +145,8 @@ export const Hero3DWebGL = () => {
         <div className="absolute top-0 bottom-0 right-0 w-32 bg-gradient-to-l from-black to-transparent" />
       </div>
 
-      <div className="h-screen uppercase items-center w-full absolute z-[60] pointer-events-none px-10 flex justify-center flex-col">
-        <div className="text-3xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-orbitron">
+      <div className="h-screen uppercase items-center w-full absolute z-[60] px-10 flex justify-center flex-col">
+        <div className="text-3xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-orbitron pointer-events-none">
           <div className="flex space-x-2 lg:space-x-6 overflow-hidden text-white">
             {titleWords.map((word, index) => (
               <div
@@ -162,7 +162,7 @@ export const Hero3DWebGL = () => {
             ))}
           </div>
         </div>
-        <div className="text-xs md:text-xl xl:text-2xl 2xl:text-3xl mt-2 overflow-hidden text-white font-bold max-w-4xl mx-auto text-center px-4">
+        <div className="text-xs md:text-xl xl:text-2xl 2xl:text-3xl mt-2 overflow-hidden text-white font-bold max-w-4xl mx-auto text-center px-4 pointer-events-none">
           <div
             className={subtitleVisible ? "fade-in-subtitle" : ""}
             style={{
@@ -173,6 +173,22 @@ export const Hero3DWebGL = () => {
             {subtitle}
           </div>
         </div>
+        {subtitleVisible && (
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center fade-in-subtitle">
+            <a
+              href="#technology"
+              className="px-8 py-3 bg-red-500 hover:bg-red-600 text-white font-orbitron text-sm font-bold rounded-lg transition-colors duration-200 text-center"
+            >
+              Узнать больше
+            </a>
+            <a
+              href="#faq"
+              className="px-8 py-3 border border-white/30 hover:border-red-500 text-white font-orbitron text-sm font-bold rounded-lg transition-colors duration-200 text-center"
+            >
+              Частые вопросы
+            </a>
+          </div>
+        )}
       </div>
 
       <Canvas
